@@ -12,6 +12,8 @@ public class Motor {
         this.potencia = potencia;
     }
 
+    public Motor() {
+    }
 
     public String getTipo() { return tipo; }
     public void setTipo(String tipo) { this.tipo = tipo; }

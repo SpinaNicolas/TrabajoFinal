@@ -11,6 +11,9 @@ public class Consecionaria {
         this.vehiculos = vehiculos;
     }
 
+    public Consecionaria() {
+    }
+
     public String getNombre() {
         return nombre;
     }

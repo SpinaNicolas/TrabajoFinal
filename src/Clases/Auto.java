@@ -9,6 +9,11 @@ public class Auto extends Vehiculo {
         super(marca, color, modelo, precio, motor, descripcion);
     }
 
+
+    public Auto() {
+    }
+
+
     @Override
     public void financiacion() {
 
