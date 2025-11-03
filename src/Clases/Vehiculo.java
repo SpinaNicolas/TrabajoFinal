@@ -20,6 +20,9 @@ public abstract class Vehiculo  {
         this.descripcion = descripcion;
     }
 
+    public Vehiculo() {
+    }
+
     public String getMarca() {
         return marca;
     }

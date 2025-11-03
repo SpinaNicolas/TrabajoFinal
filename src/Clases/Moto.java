@@ -9,6 +9,9 @@ public class Moto extends Vehiculo {
         super(marca, color, modelo, precio, motor, descripcion);
     }
 
+    public Moto() {
+    }
+
     @Override
     public void financiacion() {
 
