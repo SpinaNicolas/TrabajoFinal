@@ -29,9 +29,11 @@ public class Consecionaria {
 
     @Override
     public String toString() {
-        return "Consecionaria{" +
-                "nombre='" + nombre + '\'' +
-                ", vehiculos=" + vehiculos +
-                '}';
+        return "Concesionaria {\n" +
+                "  Nombre: " + nombre + ",\n" +
+                "  Vehículos: " + vehiculos + "\n" +
+                "}";
     }
+
+
 }

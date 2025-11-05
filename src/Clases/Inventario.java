@@ -31,9 +31,9 @@ public class Inventario <T extends Vehiculo>{
 
     @Override
     public String toString() {
-        return "Inventario{" +
-                "lista=" + lista +
-                '}';
+        return "Inventario {\n" +
+                "  Lista: " + lista + "\n" +
+                "}";
     }
 
     public void agregarVehiculo(T vehiculo) {
