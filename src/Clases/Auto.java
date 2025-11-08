@@ -5,8 +5,8 @@ import java.util.List;
 public class Auto extends Vehiculo {
 
 
-    public Auto(String marca, String color, String modelo, double precio, Motor motor, List<String> descripcion) {
-        super(marca, color, modelo, precio, motor, descripcion);
+    public Auto(String marca, String color, String modelo, double precio, Motor motor, List<String> descripcion, int ano) {
+        super(marca, color, modelo, precio, motor, descripcion, ano);
     }
 
 

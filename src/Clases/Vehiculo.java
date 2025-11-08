@@ -7,20 +7,30 @@ public abstract class Vehiculo  {
     private String marca;
     private String color;
     private String modelo;
+    private int ano;
     private double precio;
     private Motor motor;
     private List<String> descripcion;
 
-    public Vehiculo(String marca, String color, String modelo, double precio, Motor motor, List<String> descripcion) {
+    public Vehiculo(String marca, String color, String modelo, double precio, Motor motor, List<String> descripcion, int ano) {
         this.marca = marca;
         this.color = color;
         this.modelo = modelo;
         this.precio = precio;
         this.motor = motor;
+        this.ano = ano;
         this.descripcion = descripcion;
     }
 
     public Vehiculo() {
+    }
+
+    public int getAno() {
+        return ano;
+    }
+
+    public void setAno(int ano) {
+        this.ano = ano;
     }
 
     public String getMarca() {
@@ -78,6 +88,7 @@ public abstract class Vehiculo  {
         return "🚗 Vehículo en stock 🚗\n" +
                 "→ Marca: " + marca + "\n" +
                 "→ Modelo: " + modelo + "\n" +
+                "→ Año: " + ano + "\n" +
                 "→ Color: " + color + "\n" +
                 "→ Precio: $" + precio + "\n" +
                 "→ Descripción: " + descripcion + "\n" +

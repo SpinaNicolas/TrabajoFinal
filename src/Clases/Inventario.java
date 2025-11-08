@@ -1,5 +1,7 @@
 package Clases;
 
+import usoJson.GestionJson;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -31,14 +33,13 @@ public class Inventario <T extends Vehiculo>{
 
     @Override
     public String toString() {
-        return "Inventario {\n" +
-                "  Lista: " + lista + "\n" +
+        return  lista + "\n" +
                 "}";
     }
 
     public void agregarVehiculo(T vehiculo) {
         lista.add(vehiculo);
-
+        GestionJson.actualizaJson(vehiculo);
     }
 
     public List<T> cargaVehiculoEnLista () {
@@ -65,7 +66,6 @@ public class Inventario <T extends Vehiculo>{
                 agregarVehiculo((T) m);
                 break;
         }
-        /// actualiza json
         return lista;
     }
 
@@ -79,6 +79,8 @@ public class Inventario <T extends Vehiculo>{
         v.setMarca(scanner.nextLine());
         System.out.println("Ingrese modelo");
         v.setModelo(scanner.nextLine());
+        System.out.println("Ingrese año");
+        v.setAno(scanner.nextInt());
         System.out.println("Ingrese precio");
         v.setPrecio(scanner.nextDouble());
         /// MOTOR

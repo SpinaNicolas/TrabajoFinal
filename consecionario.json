@@ -1,0 +1,92 @@
+{
+  "Consecionaria": {
+    "listaVehiculos": [
+      {
+        "descripcion": [
+          "muy cuidado"
+        ],
+        "marca": "renault",
+        "motor": {
+          "cilindros": 4,
+          "potencia": 75,
+          "tipo": "nafta"
+        },
+        "precio": 4000,
+        "color": "azul",
+        "modelo": "clio"
+      },
+      {
+        "descripcion": [
+          "repintado"
+        ],
+        "marca": "volkswagen",
+        "motor": {
+          "cilindros": 4,
+          "potencia": 101,
+          "tipo": "nafta"
+        },
+        "precio": 6000,
+        "color": "negro",
+        "modelo": "gol"
+      },
+      {
+        "descripcion": [
+          "200.000 kms"
+        ],
+        "marca": "volkswagen",
+        "motor": {
+          "cilindros": 4,
+          "potencia": 180,
+          "tipo": "diesel"
+        },
+        "precio": 25000,
+        "color": "gris",
+        "modelo": "amarok"
+      },
+      {
+        "descripcion": [
+          "30.000 kms"
+        ],
+        "marca": "dodge",
+        "motor": {
+          "cilindros": 8,
+          "potencia": 300,
+          "tipo": "nafta"
+        },
+        "precio": 40000,
+        "color": "negro",
+        "modelo": "ram 1500"
+      },
+      {
+        "descripcion": [
+          "300.000 kms"
+        ],
+        "marca": "renault",
+        "motor": {
+          "cilindros": 4,
+          "potencia": 75,
+          "tipo": "nafta"
+        },
+        "precio": 2500,
+        "color": "verde",
+        "modelo": "twingo"
+      },
+      {
+        "descripcion": [
+          "mecanicamente impecable",
+          "350.000 kms"
+        ],
+        "marca": "ford",
+        "motor": {
+          "cilindros": 4,
+          "potencia": 120,
+          "tipo": "diesel"
+        },
+        "precio": 8500,
+        "color": "bordo",
+        "modelo": "ranger"
+      }
+    ],
+    "nombre": "Garage Mardel"
+  }
+}
