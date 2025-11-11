@@ -8,5 +8,8 @@ public class Main {
 
         Consecionaria consecionaria = GestionJson.mapConsecionaria();
         System.out.println(consecionaria);
+        consecionaria.ejecutaMenu();
+
     }
+
 }

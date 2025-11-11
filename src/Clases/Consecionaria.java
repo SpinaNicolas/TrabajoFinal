@@ -35,5 +35,9 @@ public class Consecionaria {
                 "}";
     }
 
+    public void ejecutaMenu (){
 
+        vehiculos.menu();
+
+    }
 }

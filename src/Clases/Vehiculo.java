@@ -2,7 +2,7 @@ package Clases;
 
 import java.util.List;
 
-public abstract class Vehiculo  {
+public abstract class Vehiculo implements Comparable<Vehiculo> {
 
     private String tipo;
     private int kms;
@@ -111,6 +111,10 @@ public abstract class Vehiculo  {
         this.descripcion = descripcion;
     }
 
+    @Override
+    public int compareTo(Vehiculo o) {
+        return 0;
+    }
 
     @Override
     public String toString() {

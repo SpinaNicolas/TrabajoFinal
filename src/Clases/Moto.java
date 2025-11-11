@@ -21,6 +21,7 @@ public class Moto extends Vehiculo implements Financiamiento {
     @Override
     public void calcularFinanciamiento() {
 
+        System.out.println();
     }
 
 }

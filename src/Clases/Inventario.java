@@ -78,41 +78,62 @@ public class Inventario <T extends Vehiculo>{
         return lista;
     }
 
-    public Vehiculo creaVehiculo (Vehiculo v){
+    public Vehiculo creaVehiculo(Vehiculo v) {
         Motor motor = new Motor();
         ArrayList<String> descripcion = new ArrayList<>();
+
+        scanner.nextLine(); // Limpieza de buffer
+
+        System.out.println("Ingrese ID del vehículo"); // Validar que sea positivo
+        v.setId(scanner.nextInt());
+
         scanner.nextLine();
-        System.out.println("Ingrese color");/// Excepcion si no es string
+        System.out.println("Ingrese tipo de vehículo (auto/camioneta/moto)"); // Validar que sea uno de los tres
+        v.setTipo(scanner.nextLine());
+
+        System.out.println("Ingrese color"); // Validar que no esté vacío
         v.setColor(scanner.nextLine());
-        System.out.println("Ingrese marca"); /// Excepcion si no es string
+
+        System.out.println("Ingrese marca"); // Validar que no esté vacío
         v.setMarca(scanner.nextLine());
-        System.out.println("Ingrese modelo");/// Excepcion si no es string
+
+        System.out.println("Ingrese modelo"); // Validar que no esté vacío
         v.setModelo(scanner.nextLine());
-        System.out.println("Ingrese año");/// Excepcion si es menos q 0
+
+        System.out.println("Ingrese año"); // Validar que sea > 0
         v.setAno(scanner.nextInt());
-        System.out.println("Ingrese precio");/// Excepcion si es menos q 0
+
+        System.out.println("Ingrese kilometraje"); // Validar que sea >= 0
+        v.setKms(scanner.nextInt());
+
+        System.out.println("Ingrese precio"); // Validar que sea >= 0
         v.setPrecio(scanner.nextDouble());
-        /// MOTOR
+
+        // MOTOR
         scanner.nextLine();
-        System.out.println("Ingrese numero de cilindros de motor");/// Excepcion si no ingresa numero
+        System.out.println("Ingrese número de cilindros del motor"); // Validar que sea > 0
         motor.setCilindros(scanner.nextInt());
+
         scanner.nextLine();
-        System.out.println("Ingrese tipo de motor (Nafta/Diesel)");/// excepcion si ingresa otra cosa
+        System.out.println("Ingrese tipo de motor (nafta/diesel)"); // Validar que sea uno de los dos
         motor.setTipo(scanner.nextLine());
-        System.out.println("Ingrese potencia del motor");/// Excepcion si no ingresa numero
-        motor.setPotencia(scanner.nextDouble());
+
+        System.out.println("Ingrese potencia del motor"); // Validar que sea > 0
+        motor.setPotencia(scanner.nextInt());
+
         v.setMotor(motor);
-        /// ESPECIFICACIONES
+
+        // ESPECIFICACIONES
         int seguir = 0;
         do {
             scanner.nextLine();
-            String s;
-            System.out.println("Ingrese especificacion:");
-            s = scanner.nextLine();
+            System.out.println("Ingrese especificación:");
+            String s = scanner.nextLine();
             descripcion.add(s);
-            System.out.println("Presione 1 para cargar otra especificacion, 0 para no cargar");  /// Excepcion si seguir menor q 0 o mayor q 1 (opicnones valids)
+
+            System.out.println("Presione 1 para cargar otra especificación, 0 para finalizar"); // Validar que sea 0 o 1
             seguir = scanner.nextInt();
-        } while (seguir==1);
+        } while (seguir == 1);
 
         v.setDescripcion(descripcion);
 
@@ -142,8 +163,97 @@ public class Inventario <T extends Vehiculo>{
             }
         }
     }
+    public void menu() {
+        System.out.println("Bienvenido a Garage Mardel");
 
-    /// listarStock osea solo los disponibles.
-    /// listarHistorial osea disponibles y no ?
-    /// listarVendido osea no dispo
+        Scanner scanner = new Scanner(System.in);
+        int opcion;
+
+        do {
+            System.out.println("===== MENÚ CONCESIONARIA =====");
+            System.out.println("1. Agregar vehículo");
+            System.out.println("2. Mostrar vehículos");
+            System.out.println("3. Buscar vehículo por marca");
+            System.out.println("4. Filtrar tipos de vehiculos");
+            System.out.println("5. Salir");
+            System.out.print("Seleccione una opción: ");
+
+            opcion = scanner.nextInt();
+            scanner.nextLine(); // Limpiar buffer
+
+            switch (opcion) {
+                case 1:
+                    System.out.println(">> Agregar vehículo");
+                    cargaVehiculoEnLista();
+                    break;
+                case 2:
+                    System.out.println(">> Mostrar vehiculos");
+                    mostrarListaEntera();
+                    break;
+                case 3:
+                    System.out.println(">> Buscar vehículo por marca");
+
+                    break;
+                case 4:
+                    System.out.println(">> Que tipo de vehiculo quiere ver..");
+                    System.out.println("1 .Auto");
+                    System.out.println("2 .Moto");
+                    System.out.println("3 .Camioneta");
+                    mostrarPorTipo(scanner.nextInt());
+                    break;
+                case 5:
+                    System.out.println(">> Saliendo del sistema...");
+                    break;
+                default:
+                    System.out.println(">> Opción inválida. Intente nuevamente.");
+            }
+
+
+        } while (opcion != 5);
+
+    }
+
+
+    public void mostrarListaEntera() {
+        System.out.println("=== INVENTARIO DE VEHÍCULOS ===");
+        if (lista.isEmpty()) {
+            System.out.println("No hay vehículos en el inventario.");
+        } else {
+            for (Vehiculo v : lista) {
+                System.out.println("╔══════════════════════════════════════════════╗");
+                System.out.printf("║ 🆔 ID: %-38d ║\n", v.getId());
+                System.out.printf("║ 🚘 Tipo: %-36s ║\n", v.getTipo());
+                System.out.printf("║ 🚗 Marca: %-34s ║\n", v.getMarca());
+                System.out.printf("║ 📌 Modelo: %-33s ║\n", v.getModelo());
+                System.out.printf("║ 🎨 Color: %-34s ║\n", v.getColor());
+                System.out.printf("║ 📅 Año: %-36d ║\n", v.getAno());
+                System.out.printf("║ 🛣️ Kilometraje: %-26d km ║\n", v.getKms());
+                System.out.printf("║ 💰 Precio: $%-31.2f ║\n", v.getPrecio());
+                System.out.println("║ 🔧 Motor:                                     ║");
+                System.out.printf("║   → Tipo: %-32s ║\n", v.getMotor().getTipo());
+                System.out.printf("║   → Cilindros: %-27d ║\n", v.getMotor().getCilindros());
+                System.out.printf("║   → Potencia: %-28d HP ║\n", v.getMotor().getPotencia());
+                System.out.println("║ 📝 Descripción:                              ║");
+                for (String desc : v.getDescripcion()) {
+                    System.out.printf("║   - %-38s ║\n", desc);
+                }
+                System.out.println("╚══════════════════════════════════════════════╝\n");
+            }
+        }
+    }
+    public void mostrarPorTipo(int numero) {
+        switch (numero) {
+            case 1:
+                listarAutos();
+                break;
+            case 2:
+                listarMotos();
+                break;
+            case 3:
+                listarCamioneta();
+                break;
+        }
+    }
 }
+
+
