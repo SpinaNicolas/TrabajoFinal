@@ -1,92 +1,211 @@
 {
-  "Consecionaria": {
+  "consecionaria": {
+    "nombre": "Garage Mardel",
     "listaVehiculos": [
       {
-        "descripcion": [
-          "muy cuidado"
-        ],
-        "marca": "renault",
-        "motor": {
-          "cilindros": 4,
-          "potencia": 75,
-          "tipo": "nafta"
-        },
-        "precio": 4000,
-        "color": "azul",
-        "modelo": "clio"
-      },
-      {
-        "descripcion": [
-          "repintado"
-        ],
-        "marca": "volkswagen",
-        "motor": {
-          "cilindros": 4,
-          "potencia": 101,
-          "tipo": "nafta"
-        },
-        "precio": 6000,
-        "color": "negro",
-        "modelo": "gol"
-      },
-      {
-        "descripcion": [
-          "200.000 kms"
-        ],
-        "marca": "volkswagen",
-        "motor": {
-          "cilindros": 4,
-          "potencia": 180,
-          "tipo": "diesel"
-        },
-        "precio": 25000,
+        "id": 1,
+        "tipo": "auto",
+        "kms": 85000,
+        "marca": "Toyota",
         "color": "gris",
-        "modelo": "amarok"
+        "modelo": "Corolla",
+        "ano": 2015,
+        "precio": 9500.0,
+        "motor": { "cilindros": 4, "potencia": 132, "tipo": "nafta" },
+        "descripcion": ["único dueño", "service oficial"]
       },
       {
-        "descripcion": [
-          "30.000 kms"
-        ],
-        "marca": "dodge",
-        "motor": {
-          "cilindros": 8,
-          "potencia": 300,
-          "tipo": "nafta"
-        },
-        "precio": 40000,
+        "id": 2,
+        "tipo": "camioneta",
+        "kms": 120000,
+        "marca": "Ford",
+        "color": "blanco",
+        "modelo": "Ranger",
+        "ano": 2018,
+        "precio": 18500.0,
+        "motor": { "cilindros": 5, "potencia": 200, "tipo": "diesel" },
+        "descripcion": ["ideal trabajo", "doble cabina"]
+      },
+      {
+        "id": 3,
+        "tipo": "moto",
+        "kms": 15000,
+        "marca": "Yamaha",
         "color": "negro",
-        "modelo": "ram 1500"
+        "modelo": "FZ 16",
+        "ano": 2020,
+        "precio": 2500.0,
+        "motor": { "cilindros": 1, "potencia": 150, "tipo": "nafta" },
+        "descripcion": ["muy cuidada", "papeles al día"]
       },
       {
-        "descripcion": [
-          "300.000 kms"
-        ],
-        "marca": "renault",
-        "motor": {
-          "cilindros": 4,
-          "potencia": 75,
-          "tipo": "nafta"
-        },
-        "precio": 2500,
+        "id": 4,
+        "tipo": "auto",
+        "kms": 60000,
+        "marca": "Volkswagen",
+        "color": "rojo",
+        "modelo": "Golf",
+        "ano": 2017,
+        "precio": 13000.0,
+        "motor": { "cilindros": 4, "potencia": 150, "tipo": "nafta" },
+        "descripcion": ["full equipo", "segunda mano"]
+      },
+      {
+        "id": 5,
+        "tipo": "camioneta",
+        "kms": 95000,
+        "marca": "Chevrolet",
+        "color": "azul",
+        "modelo": "S10",
+        "ano": 2016,
+        "precio": 17000.0,
+        "motor": { "cilindros": 4, "potencia": 180, "tipo": "diesel" },
+        "descripcion": ["4x4", "ideal campo"]
+      },
+      {
+        "id": 6,
+        "tipo": "moto",
+        "kms": 8000,
+        "marca": "Honda",
+        "color": "blanco",
+        "modelo": "CBR 500R",
+        "ano": 2021,
+        "precio": 7200.0,
+        "motor": { "cilindros": 2, "potencia": 47, "tipo": "nafta" },
+        "descripcion": ["deportiva", "excelente estado"]
+      },
+      {
+        "id": 7,
+        "tipo": "auto",
+        "kms": 70000,
+        "marca": "Peugeot",
+        "color": "gris oscuro",
+        "modelo": "208",
+        "ano": 2019,
+        "precio": 11000.0,
+        "motor": { "cilindros": 3, "potencia": 82, "tipo": "nafta" },
+        "descripcion": ["económico", "ideal ciudad"]
+      },
+      {
+        "id": 8,
+        "tipo": "camioneta",
+        "kms": 130000,
+        "marca": "Nissan",
+        "color": "negro",
+        "modelo": "Frontier",
+        "ano": 2015,
+        "precio": 16000.0,
+        "motor": { "cilindros": 4, "potencia": 190, "tipo": "diesel" },
+        "descripcion": ["doble cabina", "muy robusta"]
+      },
+      {
+        "id": 9,
+        "tipo": "moto",
+        "kms": 5000,
+        "marca": "KTM",
+        "color": "naranja",
+        "modelo": "Duke 390",
+        "ano": 2022,
+        "precio": 6800.0,
+        "motor": { "cilindros": 1, "potencia": 44, "tipo": "nafta" },
+        "descripcion": ["nueva", "muy potente"]
+      },
+      {
+        "id": 10,
+        "tipo": "auto",
+        "kms": 90000,
+        "marca": "Fiat",
+        "color": "blanco",
+        "modelo": "Cronos",
+        "ano": 2020,
+        "precio": 10500.0,
+        "motor": { "cilindros": 4, "potencia": 99, "tipo": "nafta" },
+        "descripcion": ["con garantía", "pocos kms"]
+      },
+      {
+        "id": 11,
+        "tipo": "camioneta",
+        "kms": 110000,
+        "marca": "Toyota",
+        "color": "gris plata",
+        "modelo": "Hilux",
+        "ano": 2014,
+        "precio": 19000.0,
+        "motor": { "cilindros": 4, "potencia": 171, "tipo": "diesel" },
+        "descripcion": ["4x4", "excelente mecánica"]
+      },
+      {
+        "id": 12,
+        "tipo": "moto",
+        "kms": 12000,
+        "marca": "Bajaj",
+        "color": "azul",
+        "modelo": "Rouser 200",
+        "ano": 2019,
+        "precio": 3200.0,
+        "motor": { "cilindros": 1, "potencia": 24, "tipo": "nafta" },
+        "descripcion": ["muy cuidada", "segunda mano"]
+      },
+      {
+        "id": 13,
+        "tipo": "auto",
+        "kms": 50000,
+        "marca": "Chevrolet",
+        "color": "rojo",
+        "modelo": "Onix",
+        "ano": 2021,
+        "precio": 11500.0,
+        "motor": { "cilindros": 3, "potencia": 116, "tipo": "nafta" },
+        "descripcion": ["con pantalla", "único dueño"]
+      },
+      {
+        "id": 14,
+        "tipo": "camioneta",
+        "kms": 140000,
+        "marca": "Volkswagen",
+        "color": "blanco",
+        "modelo": "Amarok",
+        "ano": 2013,
+        "precio": 15500.0,
+        "motor": { "cilindros": 4, "potencia": 180, "tipo": "diesel" },
+        "descripcion": ["doble cabina", "ideal carga"]
+      },
+      {
+        "id": 15,
+        "tipo": "moto",
+        "kms": 3000,
+        "marca": "Benelli",
         "color": "verde",
-        "modelo": "twingo"
+        "modelo": "Leoncino 500",
+        "ano": 2023,
+        "precio": 7500.0,
+        "motor": { "cilindros": 2, "potencia": 48, "tipo": "nafta" },
+        "descripcion": ["nueva", "estilo scrambler"]
       },
       {
-        "descripcion": [
-          "mecanicamente impecable",
-          "350.000 kms"
-        ],
-        "marca": "ford",
-        "motor": {
-          "cilindros": 4,
-          "potencia": 120,
-          "tipo": "diesel"
-        },
-        "precio": 8500,
-        "color": "bordo",
-        "modelo": "ranger"
+        "id": 16,
+        "tipo": "auto",
+        "kms": 65000,
+        "marca": "Renault",
+        "color": "gris oscuro",
+        "modelo": "Sandero",
+        "ano": 2018,
+        "precio": 9800.0,
+        "motor": { "cilindros": 4, "potencia": 105, "tipo": "nafta" },
+        "descripcion": ["amplio", "económico"]
+      },
+      {
+        "id": 17,
+        "tipo": "camioneta",
+        "kms": 100000,
+        "marca": "Fiat",
+        "color": "rojo",
+        "modelo": "Toro",
+        "ano": 2020,
+        "precio": 17500.0,
+        "motor": { "cilindros": 4, "potencia": 170, "tipo": "diesel" },
+        "descripcion": ["automática", "muy cómoda"]
       }
-    ],
-    "nombre": "Garage Mardel"
+    ]
   }
 }

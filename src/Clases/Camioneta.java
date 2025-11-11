@@ -1,18 +1,20 @@
 package Clases;
 
+import Interfaces.Financiamiento;
+
 import java.util.List;
 
-public class Camioneta extends Vehiculo{
+public class Camioneta extends Vehiculo implements Financiamiento {
 
 
-    public Camioneta(String marca, String color, String modelo, double precio, Motor motor, List<String> descripcion, int ano) {
-        super(marca, color, modelo, precio, motor, descripcion, ano);
-
+    public Camioneta(String tipo, int kms, int id, String marca, String color, String modelo, int ano, double precio, Motor motor, List<String> descripcion) {
+        super(tipo, kms, id, marca, color, modelo, ano, precio, motor, descripcion);
     }
 
     public Camioneta() {
 
     }
+
 
     @Override
     public String toString() {
@@ -20,7 +22,7 @@ public class Camioneta extends Vehiculo{
     }
 
     @Override
-    public void financiacion() {
+    public void calcularFinanciamiento() {
 
     }
 }

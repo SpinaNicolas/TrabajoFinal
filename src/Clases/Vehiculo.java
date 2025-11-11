@@ -4,6 +4,9 @@ import java.util.List;
 
 public abstract class Vehiculo  {
 
+    private String tipo;
+    private int kms;
+    private int id;
     private String marca;
     private String color;
     private String modelo;
@@ -12,13 +15,16 @@ public abstract class Vehiculo  {
     private Motor motor;
     private List<String> descripcion;
 
-    public Vehiculo(String marca, String color, String modelo, double precio, Motor motor, List<String> descripcion, int ano) {
+    public Vehiculo(String tipo, int kms, int id, String marca, String color, String modelo, int ano, double precio, Motor motor, List<String> descripcion) {
+        this.tipo = tipo;
+        this.kms = kms;
+        this.id = id;
         this.marca = marca;
         this.color = color;
         this.modelo = modelo;
+        this.ano = ano;
         this.precio = precio;
         this.motor = motor;
-        this.ano = ano;
         this.descripcion = descripcion;
     }
 
@@ -31,6 +37,30 @@ public abstract class Vehiculo  {
 
     public void setAno(int ano) {
         this.ano = ano;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public int getKms() {
+        return kms;
+    }
+
+    public void setKms(int kms) {
+        this.kms = kms;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getMarca() {
@@ -81,16 +111,19 @@ public abstract class Vehiculo  {
         this.descripcion = descripcion;
     }
 
-    public abstract void financiacion();
 
     @Override
     public String toString() {
-        return "🚗 Vehículo en stock 🚗\n" +
+        return "🚗 Vehículos en stock 🚗\n" +
+                "→ ID: " + id + "\n" +
+                "→ Tipo: " + tipo + "\n" +
                 "→ Marca: " + marca + "\n" +
                 "→ Modelo: " + modelo + "\n" +
                 "→ Año: " + ano + "\n" +
                 "→ Color: " + color + "\n" +
+                "→ Kilometraje: " + kms + " km\n" +
                 "→ Precio: $" + precio + "\n" +
+                "→ Motor: " + motor + "\n" +
                 "→ Descripción: " + descripcion + "\n" +
                 "-----------------------------";
     }

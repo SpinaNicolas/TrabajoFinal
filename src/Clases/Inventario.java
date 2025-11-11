@@ -22,11 +22,20 @@ public class Inventario <T extends Vehiculo>{
         this.lista = lista;
     }
 
-    public void eliminarVehiculo(T  vehiculo ) {
+
+    public void eliminarVehiculo (){
+        int id;
+        System.out.println("Ingrese id del vehiculo a eliminar: ");
+        id = scanner.nextInt();
         Iterator<T> iterator = lista.iterator();
-        while(iterator.hasNext()){
-            if(iterator.next().equals(vehiculo)){
+        while(iterator.hasNext())
+        {
+            if(iterator.next().equals(id)){
                 iterator.remove();
+                System.out.println("Vehiculo eliminado correctamente.");
+            }
+            else {
+                System.out.println("No se encuentra el vehiculo.");
             }
         }
     }
@@ -73,24 +82,24 @@ public class Inventario <T extends Vehiculo>{
         Motor motor = new Motor();
         ArrayList<String> descripcion = new ArrayList<>();
         scanner.nextLine();
-        System.out.println("Ingrese color");
+        System.out.println("Ingrese color");/// Excepcion si no es string
         v.setColor(scanner.nextLine());
-        System.out.println("Ingrese marca");
+        System.out.println("Ingrese marca"); /// Excepcion si no es string
         v.setMarca(scanner.nextLine());
-        System.out.println("Ingrese modelo");
+        System.out.println("Ingrese modelo");/// Excepcion si no es string
         v.setModelo(scanner.nextLine());
-        System.out.println("Ingrese año");
+        System.out.println("Ingrese año");/// Excepcion si es menos q 0
         v.setAno(scanner.nextInt());
-        System.out.println("Ingrese precio");
+        System.out.println("Ingrese precio");/// Excepcion si es menos q 0
         v.setPrecio(scanner.nextDouble());
         /// MOTOR
         scanner.nextLine();
         System.out.println("Ingrese numero de cilindros de motor");/// Excepcion si no ingresa numero
         motor.setCilindros(scanner.nextInt());
         scanner.nextLine();
-        System.out.println("Ingrese tipo de motor (Nafta/Diesel)");
+        System.out.println("Ingrese tipo de motor (Nafta/Diesel)");/// excepcion si ingresa otra cosa
         motor.setTipo(scanner.nextLine());
-        System.out.println("Ingrese potencia del motor");
+        System.out.println("Ingrese potencia del motor");/// Excepcion si no ingresa numero
         motor.setPotencia(scanner.nextDouble());
         v.setMotor(motor);
         /// ESPECIFICACIONES
@@ -101,7 +110,7 @@ public class Inventario <T extends Vehiculo>{
             System.out.println("Ingrese especificacion:");
             s = scanner.nextLine();
             descripcion.add(s);
-            System.out.println("Presione 1 para cargar otra especificacion, 0 para no cargar");
+            System.out.println("Presione 1 para cargar otra especificacion, 0 para no cargar");  /// Excepcion si seguir menor q 0 o mayor q 1 (opicnones valids)
             seguir = scanner.nextInt();
         } while (seguir==1);
 
@@ -134,5 +143,7 @@ public class Inventario <T extends Vehiculo>{
         }
     }
 
-
+    /// listarStock osea solo los disponibles.
+    /// listarHistorial osea disponibles y no ?
+    /// listarVendido osea no dispo
 }

@@ -15,6 +15,14 @@ public class Motor {
     public Motor() {
     }
 
+    @Override
+    public String toString() {
+        return "🔧 Motor\n" +
+                "→ Tipo: " + tipo + "\n" +
+                "→ Cilindros: " + cilindros + "\n" +
+                "→ Potencia: " + potencia + " HP";
+    }
+
     public String getTipo() { return tipo; }
     public void setTipo(String tipo) { this.tipo = tipo; }
 
