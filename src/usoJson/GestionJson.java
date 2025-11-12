@@ -20,9 +20,13 @@ public class GestionJson {
 
             for (Vehiculo vehiculo: c.getVehiculos().getLista()){
                 JSONObject jVehiculo = new JSONObject();
+                jVehiculo.put("id", vehiculo.getId());
+                jVehiculo.put("tipo", vehiculo.getTipo());
+                jVehiculo.put("kms", vehiculo.getKms());
                 jVehiculo.put("marca", vehiculo.getMarca());
                 jVehiculo.put("color", vehiculo.getColor());
                 jVehiculo.put("modelo", vehiculo.getModelo());
+                jVehiculo.put("ano", vehiculo.getAno());
                 jVehiculo.put("precio", vehiculo.getPrecio());
                 JSONObject jMotor = new JSONObject();
 
@@ -50,9 +54,13 @@ public class GestionJson {
             JSONArray jlista = jConsecionario.getJSONArray("listaVehiculos");
             /// VEHICULO JSON PARA CARGAR A LIST
             JSONObject jVehiculo = new JSONObject();
+            jVehiculo.put("id", vehiculo.getId());
+            jVehiculo.put("tipo", vehiculo.getTipo());
+            jVehiculo.put("kms", vehiculo.getKms());
             jVehiculo.put("marca", vehiculo.getMarca());
             jVehiculo.put("color", vehiculo.getColor());
             jVehiculo.put("modelo", vehiculo.getModelo());
+            jVehiculo.put("ano", vehiculo.getAno());
             jVehiculo.put("precio", vehiculo.getPrecio());
             JSONObject jMotor = new JSONObject();
 

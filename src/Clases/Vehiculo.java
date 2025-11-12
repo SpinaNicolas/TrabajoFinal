@@ -1,8 +1,12 @@
 package Clases;
 
+import Interfaces.Financiamiento;
+
 import java.util.List;
 
-public abstract class Vehiculo implements Comparable<Vehiculo> {
+import static java.lang.Double.compare;
+
+public abstract class Vehiculo implements Financiamiento, Comparable<Vehiculo> {
 
     private String tipo;
     private int kms;
@@ -113,7 +117,12 @@ public abstract class Vehiculo implements Comparable<Vehiculo> {
 
     @Override
     public int compareTo(Vehiculo o) {
-        return 0;
+        return Double.compare(o.precio, this.precio);
+    }
+
+    @Override
+    public void calcularFinanciamiento() {
+
     }
 
     @Override

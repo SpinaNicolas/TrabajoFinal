@@ -21,7 +21,11 @@ public class Moto extends Vehiculo implements Financiamiento {
     @Override
     public void calcularFinanciamiento() {
 
-        System.out.println();
+        System.out.println("🚗 Vehículo: " + this.getMarca() + " " + this.getModelo());
+        System.out.printf("💰 Precio total: $%.2f\n", this.getPrecio());
+        System.out.printf("📥 Adelanto (40%%): $%.2f\n", this.getPrecio() * 0.4);
+        System.out.printf("📈 Resto a financiar (60%%): $%.2f\n", this.getPrecio() * 0.6);
+        System.out.println("────────────────────────────────────────────");
     }
 
 }

@@ -7,7 +7,6 @@ public class Main {
     public static void main(String[] args) {
 
         Consecionaria consecionaria = GestionJson.mapConsecionaria();
-        System.out.println(consecionaria);
         consecionaria.ejecutaMenu();
 
     }

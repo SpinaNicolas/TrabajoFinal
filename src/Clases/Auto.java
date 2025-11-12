@@ -20,6 +20,10 @@ public class Auto extends Vehiculo implements Financiamiento {
 
     @Override
     public void calcularFinanciamiento() {
-
+        System.out.println("🚗 Vehículo: " + this.getMarca() + " " + this.getModelo());
+        System.out.printf("💰 Precio total: $%.2f\n", this.getPrecio());
+        System.out.printf("📥 Adelanto (50%%): $%.2f\n", this.getPrecio() * 0.5);
+        System.out.printf("📈 Resto a financiar (50%%): $%.2f\n", this.getPrecio() * 0.5);
+        System.out.println("────────────────────────────────────────────");
     }
 }
