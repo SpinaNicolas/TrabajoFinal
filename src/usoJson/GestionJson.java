@@ -49,7 +49,7 @@ public class GestionJson {
 
         try {
             JSONObject jArchi = new JSONObject(JSONUtiles.leer("consecionario.json"));
-            JSONObject jConsecionario = jArchi.getJSONObject("Consecionaria");
+            JSONObject jConsecionario = jArchi.getJSONObject("consecionaria");
             /// LISTA PARA ACTUALIZAR
             JSONArray jlista = jConsecionario.getJSONArray("listaVehiculos");
             /// VEHICULO JSON PARA CARGAR A LIST

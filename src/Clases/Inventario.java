@@ -1,5 +1,6 @@
 package Clases;
 
+import Excepciones.ErrorDuplicado;
 import Excepciones.errorNumerico;
 import Excepciones.errorTipoDato;
 import usoJson.GestionJson;
@@ -92,23 +93,46 @@ public class Inventario <T extends Vehiculo>{
         return lista;
     }
 
-    public Vehiculo creaVehiculo(Vehiculo v) throws errorNumerico, errorTipoDato {
+    public Vehiculo creaVehiculo(Vehiculo v) throws errorNumerico, errorTipoDato ,ErrorDuplicado{
         Motor motor = new Motor();
         ArrayList<String> descripcion = new ArrayList<>();
 
         System.out.println("Ingrese ID del vehículo");
         int id;
+
         if (scanner.hasNextInt()) {
             id = scanner.nextInt();
             scanner.nextLine();
+
             if (id < 0) {
                 throw new errorNumerico("Id no puede ser negativo.");
             }
+
+
+            for (Vehiculo vehiculo : lista) {
+                if (vehiculo.getId() == id) {
+                    throw new ErrorDuplicado("El ID ya está en uso. Ingrese uno diferente.");
+                }
+            }
+
             v.setId(id);
-        }
-        else {
+        } else {
             throw new errorTipoDato("El id debe ser de tipo entero.");
         }
+
+
+//        if (scanner.hasNextInt()) {
+//            id = scanner.nextInt();
+//            scanner.nextLine();
+//
+//            if (id < 0) {
+//                throw new errorNumerico("Id no puede ser negativo.");
+//            }
+//            v.setId(id);
+//        }
+//        else {
+//            throw new errorTipoDato("El id debe ser de tipo entero.");
+//        }
         
         System.out.println("Ingrese color");
         String color = scanner.nextLine();
@@ -186,6 +210,8 @@ public class Inventario <T extends Vehiculo>{
         }else {
             motor.setPotencia(potencia);
         }
+
+        v.setMotor(motor);
 
         int seguir = 0;
         do {
